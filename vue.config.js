@@ -1,6 +1,14 @@
 const webpack = require("webpack");
 const path = require("path");
 
+// vue.config.js file to be place in the root of your repository
+
+module.exports = {
+  publicPath: process.env.NODE_ENV === 'production'
+    ? '/wp/'
+    : '/wp'
+}
+
 const CONSTANTS = {
   POSTS_PER_PAGE: JSON.stringify(process.env.POSTS_PER_PAGE),
   REQUEST_CACHE_MAX: JSON.stringify(process.env.REQUEST_CACHE_MAX),
